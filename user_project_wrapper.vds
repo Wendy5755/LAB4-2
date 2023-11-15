@@ -1,0 +1,808 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Nov 15 23:06:02 2023
+# Process ID: 24944
+# Current directory: C:/Users/User/Desktop/4_2_beta/lab42/lab42.runs/synth_1
+# Command line: vivado.exe -log user_project_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source user_project_wrapper.tcl
+# Log file: C:/Users/User/Desktop/4_2_beta/lab42/lab42.runs/synth_1/user_project_wrapper.vds
+# Journal file: C:/Users/User/Desktop/4_2_beta/lab42/lab42.runs/synth_1\vivado.jou
+# Running On: LAPTOP-HI3NIN6K, OS: Windows, CPU Frequency: 1800 MHz, CPU Physical cores: 4, Host memory: 8462 MB
+#-----------------------------------------------------------
+source user_project_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1586.621 ; gain = 0.000
+Command: read_checkpoint -auto_incremental -incremental C:/Users/User/Desktop/4_2_beta/lab42/lab42.srcs/utils_1/imports/synth_1/user_project_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/User/Desktop/4_2_beta/lab42/lab42.srcs/utils_1/imports/synth_1/user_project_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top user_project_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 19548
+WARNING: [Synth 8-6901] identifier 'hang_cnt' is used before its declaration [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:111]
+WARNING: [Synth 8-6901] identifier 'ss_cnt' is used before its declaration [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:263]
+WARNING: [Synth 8-9971] redeclaration of ansi port 'io_in' is not allowed [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:88]
+WARNING: [Synth 8-9971] redeclaration of ansi port 'io_out' is not allowed [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:89]
+WARNING: [Synth 8-9971] redeclaration of ansi port 'io_oeb' is not allowed [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:90]
+WARNING: [Synth 8-6901] identifier 'wready' is used before its declaration [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:109]
+WARNING: [Synth 8-6901] identifier 'ss_tready' is used before its declaration [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:109]
+WARNING: [Synth 8-6901] identifier 'sm_tvalid' is used before its declaration [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:120]
+WARNING: [Synth 8-6901] identifier 'sm_tready' is used before its declaration [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:120]
+WARNING: [Synth 8-6901] identifier 'bram_rdata' is used before its declaration [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:230]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1586.621 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'user_project_wrapper' [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+INFO: [Synth 8-6157] synthesizing module 'user_proj_example' [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:38]
+INFO: [Synth 8-6157] synthesizing module 'bram' [C:/Users/User/Desktop/4_2_beta/4-2/bram.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bram' (0#1) [C:/Users/User/Desktop/4_2_beta/4-2/bram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'fir' [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'fir' (0#1) [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'user_proj_example' (0#1) [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'user_project_wrapper' (0#1) [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+WARNING: [Synth 8-6014] Unused sequential element data_length_reg was removed.  [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:150]
+WARNING: [Synth 8-3848] Net la_data_out in module/entity user_proj_example does not have driver. [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:64]
+WARNING: [Synth 8-3848] Net io_out in module/entity user_proj_example does not have driver. [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:69]
+WARNING: [Synth 8-3848] Net io_oeb in module/entity user_proj_example does not have driver. [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:70]
+WARNING: [Synth 8-3848] Net irq in module/entity user_proj_example does not have driver. [C:/Users/User/Desktop/4_2_beta/4-2/user_proj_example.counter.v:73]
+WARNING: [Synth 8-7129] Port A0[31] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[30] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[29] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[28] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[27] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[26] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[25] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[24] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[23] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[22] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[21] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[20] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[19] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[18] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[17] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[16] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[15] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[14] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[13] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A0[12] in module bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[127] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[126] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[125] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[124] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[123] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[122] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[121] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[120] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[119] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[118] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[117] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[116] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[115] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[114] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[113] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[112] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[111] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[110] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[109] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[108] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[107] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[106] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[105] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[104] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[103] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[102] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[101] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[100] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[99] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[98] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[97] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[96] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[95] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[94] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[93] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[92] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[91] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[90] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[89] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[88] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[87] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[86] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[85] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[84] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[83] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[82] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[81] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[80] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[79] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[78] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[77] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[76] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[75] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[74] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[73] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[72] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[71] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[70] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[69] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[68] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[67] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[66] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[65] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[64] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[63] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[62] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[61] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[60] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[59] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[58] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[57] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[56] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[55] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[54] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[53] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[52] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[51] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[50] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[49] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_out[48] in module user_proj_example is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1643.750 ; gain = 57.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1643.750 ; gain = 57.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1643.750 ; gain = 57.129
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1643.750 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/User/Desktop/4_2_beta/lab41/lab41.srcs/constrs_1/new/lab41.xdc]
+Finished Parsing XDC File [C:/Users/User/Desktop/4_2_beta/lab41/lab41.srcs/constrs_1/new/lab41.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1718.891 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 1718.891 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:45 . Memory (MB): peak = 1718.891 ; gain = 132.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:46 . Memory (MB): peak = 1718.891 ; gain = 132.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:46 . Memory (MB): peak = 1718.891 ; gain = 132.270
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'rdata_reg' [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:196]
+WARNING: [Synth 8-327] inferring latch for variable 'sm_tdata' [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:229]
+WARNING: [Synth 8-327] inferring latch for variable 'tap_Di' [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:90]
+WARNING: [Synth 8-327] inferring latch for variable 'tap_A' [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:91]
+WARNING: [Synth 8-327] inferring latch for variable 'data_Di' [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:104]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:49 . Memory (MB): peak = 1718.891 ; gain = 132.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 5     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               12 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---RAMs : 
+	             128K Bit	(4096 X 32 bit)          RAMs := 3     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 24    
+	   2 Input   12 Bit        Muxes := 13    
+	   5 Input   12 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 3     
+	   4 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mprj/fir_DUT/temp1, operation Mode is: A*B.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+DSP Report: Generating DSP mprj/fir_DUT/temp1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+DSP Report: Generating DSP mprj/fir_DUT/temp1, operation Mode is: A*B.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+DSP Report: Generating DSP mprj/fir_DUT/temp1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+DSP Report: operator mprj/fir_DUT/temp1 is absorbed into DSP mprj/fir_DUT/temp1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1718.891 ; gain = 132.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++---------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name          | RTL Object             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|user_project_wrapper | mprj/user_bram/RAM_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
+|user_project_wrapper | mprj/tap_ram/RAM_reg   | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
+|user_project_wrapper | mprj/data_ram/RAM_reg  | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
++---------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++---------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|user_project_wrapper | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|user_project_wrapper | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|user_project_wrapper | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|user_project_wrapper | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++---------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:01:15 . Memory (MB): peak = 1718.891 ; gain = 132.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:01:17 . Memory (MB): peak = 1754.285 ; gain = 167.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++---------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name          | RTL Object             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|user_project_wrapper | mprj/user_bram/RAM_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
+|user_project_wrapper | mprj/tap_ram/RAM_reg   | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
+|user_project_wrapper | mprj/data_ram/RAM_reg  | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
++---------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: i_50/O (LUT6)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_50/I5 (LUT6)
+     2: i_47/O (LUT6)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_47/I3 (LUT6)
+     4: i_50/O (LUT6)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I5 -to O i_50"
+Found timing loop:
+     0: i_371/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_371/I2 (LUT3)
+     2: i_161/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_161/I2 (LUT5)
+     4: i_371/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_371"
+Found timing loop:
+     0: i_347/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_347/I2 (LUT3)
+     2: i_185/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_185/I2 (LUT5)
+     4: i_347/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_347"
+Found timing loop:
+     0: i_363/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_363/I2 (LUT3)
+     2: i_169/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_169/I2 (LUT5)
+     4: i_363/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_363"
+Found timing loop:
+     0: i_356/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_356/I2 (LUT3)
+     2: i_176/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_176/I2 (LUT5)
+     4: i_356/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_356"
+Found timing loop:
+     0: i_351/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_351/I2 (LUT3)
+     2: i_181/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_181/I2 (LUT5)
+     4: i_351/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_351"
+Found timing loop:
+     0: i_365/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_365/I2 (LUT3)
+     2: i_167/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_167/I2 (LUT5)
+     4: i_365/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_365"
+Found timing loop:
+     0: i_357/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_357/I2 (LUT3)
+     2: i_175/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_175/I2 (LUT5)
+     4: i_357/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_357"
+Found timing loop:
+     0: i_367/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_367/I2 (LUT3)
+     2: i_165/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_165/I2 (LUT5)
+     4: i_367/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_367"
+Found timing loop:
+     0: i_352/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_352/I2 (LUT3)
+     2: i_180/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_180/I2 (LUT5)
+     4: i_352/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_352"
+Found timing loop:
+     0: i_359/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_359/I2 (LUT3)
+     2: i_173/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_173/I2 (LUT5)
+     4: i_359/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_359"
+Found timing loop:
+     0: i_355/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_355/I2 (LUT3)
+     2: i_177/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_177/I2 (LUT5)
+     4: i_355/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_355"
+Found timing loop:
+     0: i_364/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_364/I2 (LUT3)
+     2: i_168/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_168/I2 (LUT5)
+     4: i_364/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_364"
+Found timing loop:
+     0: i_360/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_360/I2 (LUT3)
+     2: i_172/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_172/I2 (LUT5)
+     4: i_360/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_360"
+Found timing loop:
+     0: i_361/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_361/I2 (LUT3)
+     2: i_171/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_171/I2 (LUT5)
+     4: i_361/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_361"
+Found timing loop:
+     0: i_368/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_368/I2 (LUT3)
+     2: i_164/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_164/I2 (LUT5)
+     4: i_368/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_368"
+Found timing loop:
+     0: i_369/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_369/I2 (LUT3)
+     2: i_163/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_163/I2 (LUT5)
+     4: i_369/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_369"
+Found timing loop:
+     0: i_362/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_362/I2 (LUT3)
+     2: i_170/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_170/I2 (LUT5)
+     4: i_362/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_362"
+Found timing loop:
+     0: i_348/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_348/I2 (LUT3)
+     2: i_184/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_184/I2 (LUT5)
+     4: i_348/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_348"
+Found timing loop:
+     0: i_372/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_372/I2 (LUT3)
+     2: i_160/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_160/I2 (LUT5)
+     4: i_372/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_372"
+Found timing loop:
+     0: i_350/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_350/I2 (LUT3)
+     2: i_182/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_182/I2 (LUT5)
+     4: i_350/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_350"
+Found timing loop:
+     0: i_349/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_349/I2 (LUT3)
+     2: i_183/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_183/I2 (LUT5)
+     4: i_349/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_349"
+Found timing loop:
+     0: i_358/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_358/I2 (LUT3)
+     2: i_174/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_174/I2 (LUT5)
+     4: i_358/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_358"
+Found timing loop:
+     0: i_353/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_353/I2 (LUT3)
+     2: i_179/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_179/I2 (LUT5)
+     4: i_353/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_353"
+Found timing loop:
+     0: i_366/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_366/I2 (LUT3)
+     2: i_166/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_166/I2 (LUT5)
+     4: i_366/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_366"
+Found timing loop:
+     0: i_354/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_354/I2 (LUT3)
+     2: i_178/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_178/I2 (LUT5)
+     4: i_354/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_354"
+Found timing loop:
+     0: i_370/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_370/I2 (LUT3)
+     2: i_162/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_162/I2 (LUT5)
+     4: i_370/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_370"
+Found timing loop:
+     0: i_373/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_373/I2 (LUT3)
+     2: i_159/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_159/I2 (LUT5)
+     4: i_373/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_373"
+Found timing loop:
+     0: i_374/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_374/I2 (LUT3)
+     2: i_158/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_158/I2 (LUT5)
+     4: i_374/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_374"
+Found timing loop:
+     0: i_377/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_377/I2 (LUT3)
+     2: i_155/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_155/I2 (LUT5)
+     4: i_377/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_377"
+Found timing loop:
+     0: i_376/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_376/I2 (LUT3)
+     2: i_156/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_156/I2 (LUT5)
+     4: i_376/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_376"
+Found timing loop:
+     0: i_375/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     1: i_375/I2 (LUT3)
+     2: i_157/O (LUT5)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+     3: i_157/I2 (LUT5)
+     4: i_375/O (LUT3)
+      [C:/Users/User/Desktop/4_2_beta/4-2/fir.v:78]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/Users/User/Desktop/4_2_beta/4-2/user_project_wrapper.v:32]
+Inferred a: "set_disable_timing -from I2 -to O i_375"
+INFO: [Synth 8-7052] The timing for the instance mprj/user_bram/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/user_bram/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/user_bram/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/user_bram/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/tap_ram/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/tap_ram/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/tap_ram/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/tap_ram/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/data_ram/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/data_ram/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/data_ram/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mprj/data_ram/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:01:18 . Memory (MB): peak = 1763.047 ; gain = 176.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:01:24 . Memory (MB): peak = 1766.805 ; gain = 180.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:01:24 . Memory (MB): peak = 1766.805 ; gain = 180.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:01:25 . Memory (MB): peak = 1766.805 ; gain = 180.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:01:25 . Memory (MB): peak = 1766.805 ; gain = 180.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:01:25 . Memory (MB): peak = 1766.852 ; gain = 180.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:01:25 . Memory (MB): peak = 1766.852 ; gain = 180.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++---------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|user_project_wrapper | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|user_project_wrapper | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|user_project_wrapper | PCIN>>17+A*B | 0      | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++---------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     5|
+|2     |CARRY4   |    39|
+|3     |DSP48E1  |     3|
+|4     |LUT1     |    15|
+|5     |LUT2     |   110|
+|6     |LUT3     |    61|
+|7     |LUT4     |    52|
+|8     |LUT5     |   103|
+|9     |LUT6     |    92|
+|10    |RAMB36E1 |    12|
+|11    |FDRE     |   138|
+|12    |FDSE     |     2|
+|13    |LD       |   140|
+|14    |IBUF     |    73|
+|15    |OBUF     |    33|
+|16    |OBUFT    |   207|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:01:25 . Memory (MB): peak = 1766.852 ; gain = 180.230
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 32 critical warnings and 537 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.852 ; gain = 105.090
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:01:26 . Memory (MB): peak = 1766.852 ; gain = 180.230
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1778.914 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 194 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1786.543 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 140 instances were transformed.
+  LD => LDCE: 140 instances
+
+Synth Design complete, checksum: 4e4cca30
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 121 Warnings, 32 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:01:42 . Memory (MB): peak = 1786.543 ; gain = 199.922
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/User/Desktop/4_2_beta/lab42/lab42.runs/synth_1/user_project_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file user_project_wrapper_utilization_synth.rpt -pb user_project_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 15 23:08:10 2023...
