@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype wire
+`default_nettype none
 /*
  *-------------------------------------------------------------
  *
@@ -39,9 +39,6 @@ module user_proj_example #(
     parameter BITS = 32,
     parameter DELAYS=10
 )(
-`define MPRJ_IO_PADS_1 19	/* number of user GPIO pads on user1 side */
-`define MPRJ_IO_PADS_2 19	/* number of user GPIO pads on user2 side */
-`define MPRJ_IO_PADS (`MPRJ_IO_PADS_1 + `MPRJ_IO_PADS_2)
 `ifdef USE_POWER_PINS
     inout vccd1,	// User area 1 1.8V supply
     inout vssd1,	// User area 1 digital ground
