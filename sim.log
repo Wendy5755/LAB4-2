@@ -1,0 +1,75 @@
+bl605@ubuntu:~/SoC_Design/lab-exmem_fir/testbench/counter_la_fir$ source ./run_sim 
+../../rtl/user/user_proj_example.counter.v:292: warning: Port 6 (A0) of bram expects 32 bits, got 12.
+../../rtl/user/user_proj_example.counter.v:292:        : Padding 20 high bits of the port.
+../../rtl/user/user_proj_example.counter.v:302: warning: Port 6 (A0) of bram expects 32 bits, got 12.
+../../rtl/user/user_proj_example.counter.v:302:        : Padding 20 high bits of the port.
+Reading counter_la_fir.hex
+counter_la_fir.hex loaded into memory
+Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
+VCD info: dumpfile counter_la_fir.vcd opened for output.
+          1401563000 LA Test 1 started
+          1814338000 receive Y[ 0] =          0
+          1980713000 receive Y[ 1] =        -10
+          2147088000 receive Y[ 2] =        -29
+          2313463000 receive Y[ 3] =        -25
+          2479838000 receive Y[ 4] =         35
+          2646213000 receive Y[ 5] =        158
+          2812588000 receive Y[ 6] =        337
+          2978963000 receive Y[ 7] =        539
+          3145338000 receive Y[ 8] =        732
+          3311713000 receive Y[ 9] =        915
+          3478088000 receive Y[10] =       1098
+          3644463000 receive Y[11] =       1281
+          3810838000 receive Y[12] =       1464
+          3977213000 receive Y[13] =       1647
+          4143588000 receive Y[14] =       1830
+          4309963000 receive Y[15] =       2013
+          4476338000 receive Y[16] =       2196
+          4642713000 receive Y[17] =       2379
+          4809088000 receive Y[18] =       2562
+          4975463000 receive Y[19] =       2745
+          5141838000 receive Y[20] =       2928
+          5308213000 receive Y[21] =       3111
+          5474588000 receive Y[22] =       3294
+          5640963000 receive Y[23] =       3477
+          5807338000 receive Y[24] =       3660
+          5973713000 receive Y[25] =       3843
+          6140088000 receive Y[26] =       4026
+          6306463000 receive Y[27] =       4209
+          6472838000 receive Y[28] =       4392
+          6639213000 receive Y[29] =       4575
+          6805588000 receive Y[30] =       4758
+          6971963000 receive Y[31] =       4941
+          7138338000 receive Y[32] =       5124
+          7304713000 receive Y[33] =       5307
+          7471088000 receive Y[34] =       5490
+          7637463000 receive Y[35] =       5673
+          7803838000 receive Y[36] =       5856
+          7970213000 receive Y[37] =       6039
+          8136588000 receive Y[38] =       6222
+          8302963000 receive Y[39] =       6405
+          8469338000 receive Y[40] =       6588
+          8635713000 receive Y[41] =       6771
+          8802088000 receive Y[42] =       6954
+          8968463000 receive Y[43] =       7137
+          9134838000 receive Y[44] =       7320
+          9301213000 receive Y[45] =       7503
+          9467588000 receive Y[46] =       7686
+          9633963000 receive Y[47] =       7869
+          9800338000 receive Y[48] =       8052
+          9966713000 receive Y[49] =       8235
+         10133088000 receive Y[50] =       8418
+         10299463000 receive Y[51] =       8601
+         10465838000 receive Y[52] =       8784
+         10632213000 receive Y[53] =       8967
+         10798588000 receive Y[54] =       9150
+         10964963000 receive Y[55] =       9333
+         11131338000 receive Y[56] =       9516
+         11297713000 receive Y[57] =       9699
+         11464088000 receive Y[58] =       9882
+         11630463000 receive Y[59] =      10065
+         11796838000 receive Y[60] =      10248
+         11963213000 receive Y[61] =      10431
+         12129588000 receive Y[62] =      10614
+         12295963000 receive Y[63] =      10797
+         12323863000 LA Test 2 passed

@@ -54,20 +54,20 @@ module user_proj_example #(
     input [31:0] wbs_dat_i,
     input [31:0] wbs_adr_i,
     output wbs_ack_o,
-    output [31:0] wbs_dat_o,
+    output[31:0] wbs_dat_o,
 
     // Logic Analyzer Signals
-    input  [127:0] la_data_in,
-    output [127:0] la_data_out,
-    input  [127:0] la_oenb,
+    input [127:0] la_data_in,
+    output[127:0] la_data_out,
+    input [127:0] la_oenb,
 
     // IOs
-    input  [`MPRJ_IO_PADS-1:0] io_in,
-    output [`MPRJ_IO_PADS-1:0] io_out,
-    output [`MPRJ_IO_PADS-1:0] io_oeb,
+    input [`MPRJ_IO_PADS-1:0] io_in,
+    output[`MPRJ_IO_PADS-1:0] io_out,
+    output[`MPRJ_IO_PADS-1:0] io_oeb,
 
     // IRQ
-    output [2:0] irq
+    output[2:0] irq
 );
     wire clk;
     wire rst;
@@ -82,9 +82,9 @@ module user_proj_example #(
     reg ready;
     reg [BITS-17:0] delayed_count;
 
-    wire [`MPRJ_IO_PADS-1:0] io_in;
-    wire [`MPRJ_IO_PADS-1:0] io_out;
-    wire [`MPRJ_IO_PADS-1:0] io_oeb;
+    // wire [`MPRJ_IO_PADS-1:0] io_in;
+    // wire [`MPRJ_IO_PADS-1:0] io_out;
+    // wire [`MPRJ_IO_PADS-1:0] io_oeb;
 
     assign clk = wb_clk_i;
     assign rst = wb_rst_i;
@@ -96,37 +96,7 @@ module user_proj_example #(
     assign wbs_dat_o = rdata;
     assign wdata = wbs_dat_i;
 
-    // decide by w or r
-    assign wbs_ack_o = ready;
-    //  || ss_tready || sm_tvalid;
-
-
-    always @(posedge clk) begin
-        ready <= 1'b0;
-        if ((valid || wready || ss_tready) && !ready)begin
-            ready <= 1'b1;
-        end
-        // check x
-        else if((wbs_stb_i && wbs_cyc_i) && (wbs_adr_i[31:0] == 32'h3000_0004 && (rdata >> 3) == 1'b1) && !ready)begin
-            ready <= 1'b1;
-        end
-        // check y
-        else if((wbs_stb_i && wbs_cyc_i) && (wbs_adr_i[31:0] == 32'h3000_0004 && (rdata >> 4) == 1'b1) && !ready)begin
-            ready <= 1'b1;
-        end
-        else if((wbs_stb_i && wbs_cyc_i) && (wbs_adr_i[31:0] == 32'h3000_0088 && sm_tvalid && sm_tready) && !ready)begin
-            ready <= 1'b1;
-        end
-        // else if(rready && !ready)begin
-        //     ready <= 1'b1;
-        // end
-        else begin
-            ready <= 1'b0;
-        end
-    end
-
-    // fir wire
-
+    // fir
     // w.i
     wire        awvalid;
     wire [11:0] awaddr;
@@ -169,12 +139,38 @@ module user_proj_example #(
     // data BRAM.o
     wire [31:0] data_Do;
 
+    wire [31:0] bram_rdata;
     wire fir_decoded;
     wire ss_chk;
 
+
+    assign wbs_ack_o = ready;
+
+    always @(posedge clk) begin
+        ready <= 1'b0;
+        if ((valid || wready || ss_tready) && !ready)begin
+            ready <= 1'b1;
+        end
+        // check x
+        else if((wbs_stb_i && wbs_cyc_i) && (wbs_adr_i[31:0] == 32'h3000_0004 && (rdata >> 3) == 1'b1) && !ready)begin
+            ready <= 1'b1;
+        end
+        // check y
+        else if((wbs_stb_i && wbs_cyc_i) && (wbs_adr_i[31:0] == 32'h3000_0004 && (rdata >> 4) == 1'b1) && !ready)begin
+            ready <= 1'b1;
+        end
+        // output y
+        else if((wbs_stb_i && wbs_cyc_i) && (wbs_adr_i[31:0] == 32'h3000_0088 && sm_tvalid && sm_tready) && !ready)begin
+            ready <= 1'b1;
+        end
+        else begin
+            ready <= 1'b0;
+        end
+    end
+
     assign ss_chk = wbs_stb_i && wbs_cyc_i;
 
-    reg [5:0] ss_count;
+    reg [6:0] ss_count;
 
     assign awvalid = wbs_stb_i && wbs_cyc_i && fir_decoded && wstrb;
     assign wvalid  = wbs_stb_i && wbs_cyc_i && fir_decoded && wstrb;
@@ -215,7 +211,7 @@ module user_proj_example #(
             ss_count <= ss_count;
         end
     end
-    assign ss_tlast = (ss_count == 6'd63) ? 1'b1 : 1'b0;
+    assign ss_tlast = (ss_count == 7'd64) ? 1'b1 : 1'b0;
 
     assign sm_tready = 1'b1;
 
@@ -227,8 +223,6 @@ module user_proj_example #(
                    (valid) ? bram_rdata:
                    // rdata = rdata
                    rdata;
-
-    wire [31:0] bram_rdata;
 
     bram user_bram (
         .CLK(clk),

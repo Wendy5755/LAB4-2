@@ -55,7 +55,7 @@
 
 /*
 	MPRJ Logic Analyzer Test:
-		- Observes counter value through LA probes [31:0] 
+		- Observes counter value through LA probes [31:0]
 		- Sets counter initial value through LA probes [63:32]
 		- Flags when counter value exceeds 500 through the management SoC gpio
 		- Outputs message to the UART when the test concludes successfuly
@@ -74,7 +74,7 @@ void main()
 	// reg_spimaster_control = 0x0801;
 
 	// reg_spimaster_control = 0xa002;	// Enable, prescaler = 2,
-                                        // connect to housekeeping SPI
+																			// connect to housekeeping SPI
 
 	// Connect the housekeeping SPI to the SPI master
 	// so that the CSB line is not left floating.  This allows
@@ -82,7 +82,7 @@ void main()
 
 	// The upper GPIO pins are configured to be output
 	// and accessble to the management SoC.
-	// Used to flad the start/end of a test 
+	// Used to flad the start/end of a test
 	// The lower GPIO pins are configured to be output
 	// and accessible to the user project.  They show
 	// the project count value, although this test is
@@ -128,36 +128,26 @@ void main()
 	// Set UART clock to 64 kbaud (enable before I/O configuration)
 	// reg_uart_clkdiv = 625;
 	reg_uart_enable = 1;
-	
+
 	// Now, apply the configuration
 	reg_mprj_xfer = 1;
 	while (reg_mprj_xfer == 1);
 
-        // Configure LA probes [31:0], [127:64] as inputs to the cpu 
+	// Configure LA probes [31:0], [127:64] as inputs to the cpu
 	// Configure LA probes [63:32] as outputs from the cpu
 	reg_la0_oenb = reg_la0_iena = 0x00000000;    // [31:0]
 	reg_la1_oenb = reg_la1_iena = 0xFFFFFFFF;    // [63:32]
 	reg_la2_oenb = reg_la2_iena = 0x00000000;    // [95:64]
 	reg_la3_oenb = reg_la3_iena = 0x00000000;    // [127:96]
 
-	// Flag start of the test 
+	// Flag start of the test
 	reg_mprj_datal = 0xAB400000;
 
 	// Set Counter value to zero through LA probes [63:32]
 	reg_la1_data = 0x00000000;
 
 	// Configure LA probes from [63:32] as inputs to disable counter write
-	reg_la1_oenb = reg_la1_iena = 0x00000000;    
-
-/*
-	while (1) {
-		if (reg_la0_data_in > 0x1F4) {
-			reg_mprj_datal = 0xAB410000;
-			break;
-		}
-	}
-*/	
-
+	reg_la1_oenb = reg_la1_iena = 0x00000000;
 
 	reg_tap_00 =   0;
 	reg_tap_01 = -10;
@@ -178,23 +168,14 @@ void main()
 	for (int i = 0; i < 64; i++)
 	{
 		// ready to accept x
-		
 		while ((reg_ctrl >> 3 & 1) != 1) {}
 		reg_x = i + 1;
-		// // ready to accept y
+		// ready to accept y
 		while ((reg_ctrl >> 4 & 1) != 1) {}
 		reg_mprj_datal = reg_y << 16;
 	}
-	// int* tmp = fir();
-	// reg_mprj_datal = *(tmp + 0) << 16;
-	// for (int i = 0; i < 1; i++)
-	// {
-	// 	int* tmp = fir();
-	// 	for (int j = 0; j < 64; j++)
-	// 	{
-	// 		reg_mprj_datal = *(tmp + j) << 16;
-	// 	}
-	// }
+
+	reg_ctrl = 0;
 
 	//print("\n");
 	//print("Monitor: Test 1 Passed\n\n");	// Makes simulation very long!

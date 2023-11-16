@@ -137,6 +137,10 @@ always@(posedge axis_clk)begin
         ap_start<=1'b1;
         ap_start_flag<=1'b1;
     end
+    else if((awaddr==12'h00)&&(wdata[0]==1'b0)&&(ap_start_flag==1'b1))begin
+        ap_start<=1'b0;
+        ap_start_flag<=1'b0;
+    end
     else if(ap_start_flag==1'b1)begin
         ap_start<=1'b1;
     end
@@ -160,7 +164,7 @@ always@(posedge axis_clk)begin
 		ap_done<=1'b0;
 		sm_tlast<=1'b0;
 	end
-	else if(cnt==32'd7200)begin
+	else if(cnt==32'd768)begin
 		cnt<=cnt;
 		ap_done<=1'b1;
 		sm_tlast<=1'b1;
@@ -204,14 +208,6 @@ always@(*)begin
 	end
 end
 
-// always@(posedge axis_clk)begin
-//     if((sm_cnt>1)&(sm_cnt<=j_cnt+12'd1))begin
-//         mul<=data_Do;
-//     end
-//     else begin
-//         mul<=32'd0;
-//     end
-// end
 assign mul=((sm_cnt>1)&(sm_cnt<=j_cnt+12'd1))?data_Do:32'd0;
 
 always@(posedge axis_clk)begin
@@ -259,7 +255,6 @@ always@(posedge axis_clk)begin
     end
 end
 
-// assign ss_tready=(ap_start&ap_idle)|sm_tvalid;
 assign ss_tready = !ss_cnt&&(addr==12'h80)&&ss_chk;
 
 reg [2:0] ss_cnt;
