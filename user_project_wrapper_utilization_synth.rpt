@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Wed Nov 15 23:08:09 2023
+| Date         : Thu Nov 16 20:55:00 2023
 | Host         : LAPTOP-HI3NIN6K running 64-bit major release  (build 9200)
 | Command      : report_utilization -file user_project_wrapper_utilization_synth.rpt -pb user_project_wrapper_utilization_synth.pb
 | Design       : user_project_wrapper
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  370 |     0 |          0 |     53200 |  0.70 |
-|   LUT as Logic          |  370 |     0 |          0 |     53200 |  0.70 |
+| Slice LUTs*             |  362 |     0 |          0 |     53200 |  0.68 |
+|   LUT as Logic          |  362 |     0 |          0 |     53200 |  0.68 |
 |   LUT as Memory         |    0 |     0 |          0 |     17400 |  0.00 |
-| Slice Registers         |  280 |     0 |          0 |    106400 |  0.26 |
-|   Register as Flip Flop |  140 |     0 |          0 |    106400 |  0.13 |
+| Slice Registers         |  281 |     0 |          0 |    106400 |  0.26 |
+|   Register as Flip Flop |  141 |     0 |          0 |    106400 |  0.13 |
 |   Register as Latch     |  140 |     0 |          0 |    106400 |  0.13 |
 | F7 Muxes                |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
@@ -58,7 +58,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 140   |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
-| 138   |          Yes |       Reset |            - |
+| 139   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,16 +151,16 @@ Table of Contents
 +----------+------+---------------------+
 | OBUFT    |  207 |                  IO |
 | LDCE     |  140 |        Flop & Latch |
-| FDRE     |  138 |        Flop & Latch |
-| LUT2     |  110 |                 LUT |
-| LUT5     |  103 |                 LUT |
-| LUT6     |   92 |                 LUT |
+| FDRE     |  139 |        Flop & Latch |
+| LUT2     |  117 |                 LUT |
+| LUT6     |   91 |                 LUT |
+| LUT5     |   91 |                 LUT |
 | IBUF     |   73 |                  IO |
-| LUT3     |   61 |                 LUT |
-| LUT4     |   52 |                 LUT |
+| LUT3     |   62 |                 LUT |
+| LUT4     |   50 |                 LUT |
 | CARRY4   |   39 |          CarryLogic |
 | OBUF     |   33 |                  IO |
-| LUT1     |   15 |                 LUT |
+| LUT1     |   16 |                 LUT |
 | RAMB36E1 |   12 |        Block Memory |
 | BUFG     |    5 |               Clock |
 | DSP48E1  |    3 |    Block Arithmetic |
